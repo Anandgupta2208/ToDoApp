@@ -1,5 +1,5 @@
 package com.example.todoapp;
-
+import com.google.firebase.auth.FirebaseAuth;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,11 +14,13 @@ public class MainActivity extends AppCompatActivity {
     // Hardcoded login credentials
     String correctUsername = "admin";
     String correctPassword = "1234";
-
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+        mAuth = FirebaseAuth.getInstance();
 
         editUsername = findViewById(R.id.editUsername);
         editPassword = findViewById(R.id.editPassword);
